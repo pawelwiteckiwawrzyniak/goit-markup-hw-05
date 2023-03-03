@@ -10,7 +10,8 @@ body {
   margin: 0 auto;
 }
 
-:hover {
+:hover,
+:focus {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -330,13 +331,13 @@ header {
   padding: 24px 0 25px 0;
 }
 
-.mail {
-  margin-right: 50px;
-}
-
 .header-contact-list-item {
   display: flex;
   align-items: center;
+}
+
+.header-contact-list-item:first-child {
+  margin-right: 50px;
 }
 
 .header-contact-list-item .header-icon {
@@ -353,12 +354,11 @@ header {
   padding: 25px 100px;
 }
 
-.header-contact-list-item:hover svg {
+.header-contact-list-item:hover .header-icon,
+.header-contact-list-item:hover .header-contact {
   fill: var(--main-color);
-}
-
-.header-contact-list-item:hover a {
   color: var(--main-color);
+  cursor: pointer;
 }
 
 .team-icons-list {
@@ -460,4 +460,64 @@ header {
 .footer-social-media-list-item:hover {
   cursor: pointer;
   background-color: var(--main-color);
+}
+
+.project-list-item-image {
+  position: relative;
+  max-height: 294px;
+  overflow: hidden;
+}
+
+.project-list-item-image > .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: var(--main-color);
+  opacity: 0.9;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-list-item:hover .overlay {
+  transform: translateY(0);
+}
+
+.backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 528px;
+  height: 581px;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-image: url(../images/x-button.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }

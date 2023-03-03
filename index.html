@@ -58,7 +58,9 @@
     <main>
       <div class="main-title-section">
         <h1 class="main-title">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-        <button class="main-button" type="button">Zamów usługę</button>
+        <button class="main-button" type="button" data-modal-open>
+          Zamów usługę
+        </button>
       </div>
       <section class="section">
         <div class="container">
@@ -364,5 +366,11 @@
         </ul>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-button" data-modal-close></button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
